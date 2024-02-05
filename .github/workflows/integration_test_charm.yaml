@@ -168,7 +168,7 @@ jobs:
           python3 -m pip install --user pipx
           python3 -m pipx ensurepath
       - name: Install CLI
-        run: pipx install git+https://github.com/canonical/data-platform-workflows@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
+        run: pipx install git+https://github.com/carlcsaposs-canonical/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
       - name: Redact secrets from log
         run: redact-secrets
         env:
