@@ -148,6 +148,9 @@ jobs:
     runs-on: ${{ matrix.groups.runner || 'ubuntu-latest' }}
     timeout-minutes: 120
     steps:
+      - run: |
+          sudo apt-get update
+          sudo apt-get install -y libpq-dev
       - name: Free up disk space
         if: ${{ !matrix.groups.self_hosted }}
         run: |
