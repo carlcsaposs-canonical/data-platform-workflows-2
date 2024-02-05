@@ -161,13 +161,13 @@ jobs:
       - name: (self-hosted) Disk usage
         if: ${{ matrix.groups.self_hosted }}
         run: df --human-readable
-      - name: (self-hosted) Install pipx
-        if: ${{ matrix.groups.self_hosted }}
-        run: |
-          sudo apt-get update
-          sudo apt-get install python3-pip python3-venv -y
-          python3 -m pip install --user pipx
-          python3 -m pipx ensurepath
+#      - name: (self-hosted) Install pipx
+#        if: ${{ matrix.groups.self_hosted }}
+#        run: |
+#          sudo apt-get update
+#          sudo apt-get install python3-pip python3-venv -y
+#          python3 -m pip install --user pipx
+#          python3 -m pipx ensurepath
       - name: Install CLI
         run: pipx install git+https://github.com/carlcsaposs-canonical/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
       - name: Redact secrets from log
