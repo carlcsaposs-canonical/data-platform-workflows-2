@@ -87,7 +87,7 @@ jobs:
     needs:
       - get-workflow-version
       - collect-bases
-    runs-on: ['self-hosted', 'data-platform', 'ARM64']
+    runs-on: [self-hosted, data-platform, ARM64]
     timeout-minutes: 120
     steps:
       - name: Install CLI
