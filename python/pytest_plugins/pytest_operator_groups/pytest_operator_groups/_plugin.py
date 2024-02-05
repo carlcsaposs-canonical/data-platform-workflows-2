@@ -111,7 +111,7 @@ def _collect_groups(items):
         @classmethod
         def from_group(cls, group: Group, *, runner: typing.Optional[_Runner]):
             if isinstance(runner, tuple):
-                self_hosted = False  #"self-hosted" in runner
+                self_hosted = "self-hosted" in runner
             else:
                 self_hosted = False
             return cls(
