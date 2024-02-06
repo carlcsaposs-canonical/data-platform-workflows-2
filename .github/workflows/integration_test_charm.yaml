@@ -274,6 +274,7 @@ jobs:
         run: |
           juju model-defaults logging-config='<root>=INFO; unit=DEBUG'
           juju add-model test
+          juju set-model-constraints arch=arm64 # todo cleanup
           pipx install tox
           pipx install poetry
       - name: Update python-libjuju version
