@@ -46,7 +46,7 @@ jobs:
     name: Get workflow version
     uses: ./.github/workflows/_get_workflow_version.yaml
     with:
-      repository-name: canonical-test2/data-platform-workflows-2
+      repository-name: carlcsaposs-canonical/data-platform-workflows-2
       file-name: release_charm.yaml
 
   release-charm:
@@ -57,7 +57,7 @@ jobs:
     timeout-minutes: 60
     steps:
       - name: Install CLI
-        run: pipx install git+https://github.com/canonical-test2/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
+        run: pipx install git+https://github.com/carlcsaposs-canonical/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
       - name: Parse charmcraft version inputs
         id: charmcraft-snap-version
         run: parse-snap-version --revision='${{ inputs.charmcraft-snap-revision }}' --channel='${{ inputs.charmcraft-snap-channel }}' --revision-input-name=charmcraft-snap-revision --channel-input-name=charmcraft-snap-channel

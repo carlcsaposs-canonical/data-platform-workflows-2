@@ -94,7 +94,7 @@ jobs:
     name: Get workflow version
     uses: ./.github/workflows/_get_workflow_version.yaml
     with:
-      repository-name: canonical-test2/data-platform-workflows-2
+      repository-name: carlcsaposs-canonical/data-platform-workflows-2
       file-name: integration_test_charm.yaml
 
   collect-integration-tests:
@@ -172,7 +172,7 @@ jobs:
 #          python3 -m pip install --user pipx
 #          python3 -m pipx ensurepath
       - name: Install CLI
-        run: pipx install git+https://github.com/canonical-test2/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
+        run: pipx install git+https://github.com/carlcsaposs-canonical/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
       - name: Redact secrets from log
         run: redact-secrets
         env:

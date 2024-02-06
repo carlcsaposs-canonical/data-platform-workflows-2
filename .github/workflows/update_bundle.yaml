@@ -38,7 +38,7 @@ jobs:
     name: Get workflow version
     uses: ./.github/workflows/_get_workflow_version.yaml
     with:
-      repository-name: canonical-test2/data-platform-workflows-2
+      repository-name: carlcsaposs-canonical/data-platform-workflows-2
       file-name: update_bundle.yaml
 
   update-bundle:
@@ -49,7 +49,7 @@ jobs:
     timeout-minutes: 5
     steps:
       - name: Install CLI
-        run: pipx install git+https://github.com/canonical-test2/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
+        run: pipx install git+https://github.com/carlcsaposs-canonical/data-platform-workflows-2@'${{ needs.get-workflow-version.outputs.version }}'#subdirectory=python/cli
       - name: Checkout
         uses: actions/checkout@v4
         with:
